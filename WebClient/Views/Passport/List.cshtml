@@ -1,0 +1,37 @@
+﻿@model IEnumerable<ClassLibrary.Pet>
+
+<section class="wrapper style1">
+    <div class="container">
+        <div id="content">
+            <h2>Список паспортов</h2>
+
+            <table class="default">
+                <tr>
+                    <th>
+                        ФИО владельца
+                    </th>
+                    <th>
+                        Кличка
+                    </th>
+                    <th>
+                        Тип
+                    </th>
+                    <th>
+                        Порода
+                    </th>
+                    <th>
+                        Дата рождения
+                    </th>
+                    <th></th>
+                </tr>
+            </table>
+        </div>
+    </div>
+</section>
+
+<script src="/Scripts/Passport.js"></script>
+<script>
+    $(document).ready(function() {
+        getPassports(true);
+    });
+</script>

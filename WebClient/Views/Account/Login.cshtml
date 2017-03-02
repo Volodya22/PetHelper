@@ -1,0 +1,56 @@
+﻿@model PetHelperApi.Models.UserViewModel
+
+<section class="wrapper style1">
+    <div class="container">
+        <div id="content">
+            <h2>Вход</h2>
+            <div class="alert alert-danger hidden" role="alert" id="errors">
+                <p id="null-error">Поля "Электронная почта" и "Пароль" обязательны для заполнения!</p>
+                <p id="email-error">Длина поля "Электронная почта" не должна превышать 30 символов!</p>
+                <p id="pwd-error">Длина поля "Пароль" должна быть не менее 5 символов!</p>
+            </div>
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+                    <hr />
+                    @Html.ValidationSummary(true)
+
+                    <div class="form-group">
+                        @Html.Label("Электронная почта", new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Email)
+                            @Html.ValidationMessageFor(model => model.Email)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.Label("Пароль", new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Password)
+                            @Html.ValidationMessageFor(model => model.Password)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Войти" class="btn btn-default" />
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+<script src="/Scripts/Auth.js"></script>
+<script>
+    $('form').on('submit', function (e) {
+        if (regDataIsValid(0)) {
+            postAuth();
+        } else {
+            e.preventDefault();
+        }
+    });
+</script>

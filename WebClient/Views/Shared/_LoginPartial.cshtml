@@ -1,0 +1,25 @@
+﻿
+    <li>
+        <a class="hidden" id="logged" style="cursor: pointer;" onclick="logOut()">Выйти</a>
+    </li>
+
+    <li class="hidden" id="not-logged">@Html.ActionLink("Регистрация", "Register", "Account")</li>
+    <li class="hidden" id="not-logged1">@Html.ActionLink("Войти", "Login", "Account")</li>
+
+<script>
+    $(document).ready(function() {
+        if (localStorage['user'] != '') {
+            $('#logged').removeClass('hidden');
+        } else {
+            $('#not-logged').removeClass('hidden');
+            $('#not-logged1').removeClass('hidden');
+        }
+    });
+
+    function logOut() {
+        localStorage['user'] = '';
+        localStorage['role'] = '';
+
+        window.location.href = 'http://localhost:24744';
+    }
+</script>

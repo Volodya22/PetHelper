@@ -1,0 +1,48 @@
+﻿@model ClassLibrary.Pet
+
+<section class="wrapper style1">
+    <div class="container">
+        <div id="content">
+            <h2>Удалить</h2>
+
+            <h3>Вы уверены, что хотите удаить данного питомца?</h3>
+            <div>
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        Владелец:
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Name)
+                    </dd>
+                    <dt>
+                        Кличка:
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Name)
+                    </dd>
+                </dl>
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.HiddenFor(m => m.Id)
+                    <div class="form-actions no-color">
+                        <input type="submit" value="Удалить" class="btn btn-default" /> |
+                        @Html.ActionLink("Назад к списку", "Index")
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="/Scripts/Card.js"></script>
+
+<script>
+    getCard(2);
+
+    $('form').on('submit', function (e) {
+        deleteCard();
+    });
+</script>

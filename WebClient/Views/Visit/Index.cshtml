@@ -1,0 +1,39 @@
+﻿@model IEnumerable<ClassLibrary.ServiceForPet>
+
+<section class="wrapper style1">
+    <div class="container">
+        <div id="content">
+            <h2>Список визитов</h2>
+
+            <p>
+                @Html.ActionLink("Создать", "Create")
+            </p>
+            <table class="default">
+                <tr>
+                    <th>
+                        Питомец
+                    </th>
+                    <th>
+                        Услуга
+                    </th>
+                    <th>
+                        Дата
+                    </th>
+                    <th></th>
+                </tr>
+            </table>
+        </div>
+    </div>
+</section>
+
+<script src="/Scripts/Services.js"></script>
+<script src="/Scripts/Card.js"></script>
+<script>
+    getCards(1);
+
+    $(document).ready(function () {
+        setTimeout(function() {
+            getServicesForPets();
+        }, 500);
+    });
+</script>

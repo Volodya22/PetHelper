@@ -1,0 +1,32 @@
+﻿<ContentControl x:Class="DesktopClient.Views.MenuCommandsControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:navigation="clr-namespace:DesktopClient.ViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <ContentControl.Resources>
+        <ResourceDictionary >
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Styles/MenuStyle.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <DataTemplate DataType="{x:Type navigation:NavigationStateViewModel}">
+                <RadioButton GroupName="{Binding RelativeSource={RelativeSource AncestorType=ItemsControl}, Path=Tag}"
+                             IsChecked="{Binding IsCurrentState}"
+                             IsTabStop="False"
+                             Style="{DynamicResource NavigationLauncherRadioButtonStyle}"/>
+            </DataTemplate>
+        </ResourceDictionary>
+    </ContentControl.Resources>
+    <DockPanel Style="{DynamicResource MainDockPanelStyle}" TextBlock.FontSize="12">
+        <Border Style="{DynamicResource LeftBorderStyle}">
+            <StackPanel Orientation="Vertical" Background="{DynamicResource LeftPanelBackground}">
+                <ScrollViewer Style="{DynamicResource ScrollViewerStyle}">
+                    <ItemsControl IsTabStop="False" ItemsSource="{Binding NavigationCommands}" />
+                </ScrollViewer>
+            </StackPanel>
+        </Border>
+    </DockPanel>
+</ContentControl>

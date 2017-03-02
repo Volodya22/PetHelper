@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ветеринарная клиника "Pet Helper"</title>
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="~/Content/main.css" rel="stylesheet" />
+    <link href="~/Scripts/jquery-ui-1.11.4/jquery-ui.min.css" rel="stylesheet" />
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="~/Scripts/jquery.min.js"></script>
+    <script src="~/Scripts/jquery-ui-1.11.4/jquery-ui.min.js"></script>
+    <script src="~/Scripts/jquery.dropotron.min.js"></script>
+    <script src="~/Scripts/skel.min.js"></script>
+    <script src="~/Scripts/util.js"></script>
+    <script src="~/Scripts/main.js"></script>
+    <script src="~/Scripts/mask.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            if (localStorage['role'].indexOf('Admin') > -1) {
+                $('#staff').removeClass('hidden');
+                $('#passport').removeClass('hidden');
+                $('#card').removeClass('hidden');
+                $('#visit').removeClass('hidden');
+            }
+            if (localStorage['role'].indexOf('User') > -1) {
+                $('#passport').removeClass('hidden');
+                $('#card').removeClass('hidden');
+                $('#visit').removeClass('hidden');
+            }
+        });
+    </script>
+</head>
+<body>
+    <div id="page-wrapper">
+        <div id="header">
+            <!-- Logo -->
+            <h1><a href="@Url.Action("Index", "Home")" id="logo"><em>Ветеринарная клиника</em> Pet Helper</a></h1>
+
+            <!-- Nav -->
+            <nav id="nav">
+                <ul>
+                    <li>@Html.ActionLink("Услуги", "Index", "Service")</li>
+                    <li>@Html.ActionLink("Персонал", "Index", "Staff")</li>
+                    <li class="hidden" id="passport">@Html.ActionLink("Паспорта питомцев", "List", "Passport")</li>
+                    <li class="hidden" id="card">@Html.ActionLink("Карты питомцев", "List", "Card")</li>
+                    <li class="hidden" id="visit">@Html.ActionLink("Визиты", "Index", "Visit")</li>
+                    <li class="hidden" id="staff">@Html.ActionLink("Профили ветеринаров", "List", "Staff")</li>
+                    @Html.Partial("_LoginPartial")
+                </ul>
+            </nav>
+        </div>
+
+
+        @RenderBody()
+
+        <div id="footer">
+            <ul class="icons">
+                <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+                <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+                <li><a href="#" class="icon fa-github"><span class="label">GitHub</span></a></li>
+                <li><a href="#" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                <li><a href="#" class="icon fa-google-plus"><span class="label">Google+</span></a></li>
+            </ul>
+
+            <!-- Copyright -->
+            <div class="copyright">
+                <ul class="menu">
+                    <li>&copy; Pet Helper. Все права защищены</li>
+                </ul>
+            </div>
+        </div>
+    </div> 
+    
+    
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,37 @@
+﻿@model IEnumerable<ClassLibrary.Service>
+
+<section class="wrapper style1">
+    <div class="container">
+        <div id="content">
+            <h2>Услуги</h2>
+
+            <p class="hidden">
+                @Html.ActionLink("Создать", "Create")
+            </p>
+            <table class="default">
+                <tr>
+                    <th>
+                        Название
+                    </th>
+                    <th>
+                        Цена
+                    </th>
+                    <th>
+                        Описание
+                    </th>
+                    <th class="options hidden"></th>
+                </tr>
+            </table>
+        </div>
+    </div>
+</section>
+
+
+<script src="/Scripts/Services.js"></script>
+<script>
+    $(document).ready(function () {
+        checkVisibility();
+
+        getServices();
+    });
+</script>

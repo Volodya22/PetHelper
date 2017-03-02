@@ -1,0 +1,21 @@
+﻿@model Guid
+
+<section class="wrapper style1">
+    <div id="content">
+        @Html.Hidden("Id", Model)
+
+
+        <div class="col-md-2 col-md-offset-1" id="pet-pic"></div>
+        <div class="col-md-3" id="pet-info"></div>
+        <div class="col-md-2" id="pet-vac"></div>
+        <div class="col-md-3" id="pet-own"></div>
+        <div style="clear: both"></div>
+    </div>
+</section>
+
+<script src="/Scripts/Passport.js"></script>
+<script>
+    $(document).ready(function() {
+        getPassport();
+    });
+</script>

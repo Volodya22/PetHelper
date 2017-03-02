@@ -1,0 +1,76 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary", "ClassLibrary\ClassLibrary.csproj", "{778B403C-D098-4A1B-B245-23ACED5EAA0F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataContext", "DataContext\DataContext.csproj", "{ADF483B3-CCB8-41DF-A0AA-A890E4127D4C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetHelperTests", "PetHelperTests\PetHelperTests.csproj", "{D0940A1D-6784-4AEC-A88B-20866D44E283}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebClient", "WebClient\WebClient.csproj", "{E2752BE5-BCD3-46FF-B12A-F30197CDD9D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesktopClient", "DesktopClient\DesktopClient.csproj", "{6596B5DB-CC33-4D52-BE2E-90EDA786E1B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetHelperRestApi", "TestRest\PetHelperRestApi.csproj", "{E034FEB2-EB74-454E-AD5A-FBB9CA41C9C2}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 7
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://cheboxarov22.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ClassLibrary\\ClassLibrary.csproj
+		SccProjectName1 = ClassLibrary
+		SccLocalPath1 = ClassLibrary
+		SccProjectUniqueName2 = DataContext\\DataContext.csproj
+		SccProjectName2 = DataContext
+		SccLocalPath2 = DataContext
+		SccProjectUniqueName3 = PetHelperTests\\PetHelperTests.csproj
+		SccProjectName3 = PetHelperTests
+		SccLocalPath3 = PetHelperTests
+		SccProjectUniqueName4 = WebClient\\WebClient.csproj
+		SccProjectName4 = WebClient
+		SccLocalPath4 = WebClient
+		SccProjectUniqueName5 = DesktopClient\\DesktopClient.csproj
+		SccProjectName5 = DesktopClient
+		SccLocalPath5 = DesktopClient
+		SccProjectUniqueName6 = TestRest\\PetHelperRestApi.csproj
+		SccProjectName6 = TestRest
+		SccLocalPath6 = TestRest
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{778B403C-D098-4A1B-B245-23ACED5EAA0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{778B403C-D098-4A1B-B245-23ACED5EAA0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{778B403C-D098-4A1B-B245-23ACED5EAA0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{778B403C-D098-4A1B-B245-23ACED5EAA0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADF483B3-CCB8-41DF-A0AA-A890E4127D4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADF483B3-CCB8-41DF-A0AA-A890E4127D4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADF483B3-CCB8-41DF-A0AA-A890E4127D4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADF483B3-CCB8-41DF-A0AA-A890E4127D4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0940A1D-6784-4AEC-A88B-20866D44E283}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0940A1D-6784-4AEC-A88B-20866D44E283}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0940A1D-6784-4AEC-A88B-20866D44E283}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0940A1D-6784-4AEC-A88B-20866D44E283}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2752BE5-BCD3-46FF-B12A-F30197CDD9D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2752BE5-BCD3-46FF-B12A-F30197CDD9D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2752BE5-BCD3-46FF-B12A-F30197CDD9D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2752BE5-BCD3-46FF-B12A-F30197CDD9D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6596B5DB-CC33-4D52-BE2E-90EDA786E1B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6596B5DB-CC33-4D52-BE2E-90EDA786E1B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6596B5DB-CC33-4D52-BE2E-90EDA786E1B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6596B5DB-CC33-4D52-BE2E-90EDA786E1B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E034FEB2-EB74-454E-AD5A-FBB9CA41C9C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E034FEB2-EB74-454E-AD5A-FBB9CA41C9C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E034FEB2-EB74-454E-AD5A-FBB9CA41C9C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E034FEB2-EB74-454E-AD5A-FBB9CA41C9C2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

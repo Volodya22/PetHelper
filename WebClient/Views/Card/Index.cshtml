@@ -1,0 +1,21 @@
+﻿@model Guid
+
+<section class="wrapper style1">
+    <div id="content">
+        @Html.Hidden("Id", Model)
+
+        <h3 class="text-center" id="pet-name"></h3>
+        <div class="col-md-2 col-md-offset-1" id="pet-pic"></div>
+        <div class="col-md-3" id="pet-info"></div>
+        <div class="col-md-3" id="pet-vac"></div>
+        <div class="col-md-3" id="vacs"></div>
+        <div style="clear: both"></div>
+    </div>
+</section>
+
+<script src="/Scripts/Card.js"></script>
+<script>
+    $(document).ready(function() {
+        getCard(0);
+    });
+</script>

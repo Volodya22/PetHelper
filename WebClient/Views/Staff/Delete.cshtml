@@ -1,0 +1,53 @@
+﻿@model ClassLibrary.User
+
+<section class="wrapper style1">
+    <div class="container">
+        <div id="content">
+            <h2>Удалить</h2>
+
+            <h3>Вы уверены, что хотите удаить данного пользователя?</h3>
+            <div>
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        Фамилия:
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Name)
+                    </dd>
+                    <dt>
+                        Имя:
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Name)
+                    </dd>
+                    <dt>
+                        Отчество:
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Name)
+                    </dd>
+                </dl>
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.HiddenFor(m => m.Id)
+                    <div class="form-actions no-color">
+                        <input type="submit" value="Удалить" class="btn btn-default" /> |
+                        @Html.ActionLink("Назад к списку", "List")
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="/Scripts/Staff.js"></script>
+<script>
+    getEmp(false);
+
+    $('form').on('submit', function () {
+        deleteEmp();
+    });
+</script>

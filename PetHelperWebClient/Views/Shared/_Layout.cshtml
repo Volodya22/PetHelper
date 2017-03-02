@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html ng-app="PetHelper">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ветеринарная клиника "Pet Helper"</title>
+    @*@Styles.Render("~/Content/css")*@
+    <link href="~/Content/assets/css/main.css" rel="stylesheet" />
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div id="page-wrapper">
+
+        <!-- Header -->
+        <div id="header">
+
+            <!-- Logo -->
+            <h1><a href="@Url.Action("Index", "Home")" id="logo"><em>Ветеринарная клиника</em> Pet Helper</a></h1>
+
+            <!-- Nav -->
+            <nav id="nav">
+                <ul>
+                    <li id="glav"><a href="@Url.Action("Index", "Home")">Главная</a></li>
+                    <li><a href="@Url.Action("Index", "Service")">Услуги</a></li>
+                    <li><a href="">Персонал</a></li>
+                    <li><a href="">Регистрация</a></li>
+                    <li><a href="">Вход</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        @RenderBody()
+
+        <div id="footer">
+
+            <ul class="icons">
+                <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+                <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+                <li><a href="#" class="icon fa-github"><span class="label">GitHub</span></a></li>
+                <li><a href="#" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                <li><a href="#" class="icon fa-google-plus"><span class="label">Google+</span></a></li>
+            </ul>
+
+            <!-- Copyright -->
+            <div class="copyright">
+                <ul class="menu">
+                    <li>&copy; Pet Helper. Все права защищены</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    @*@Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)*@
+    <script src="~/Content/assets/js/jquery.min.js"></script>
+    <script src="~/Content/assets/js/jquery.dropotron.min.js"></script>
+    <script src="~/Content/assets/js/skel.min.js"></script>
+    <script src="~/Content/assets/js/util.js"></script>
+    <script src="~/Content/assets/js/main.js"></script>
+</body>
+</html>

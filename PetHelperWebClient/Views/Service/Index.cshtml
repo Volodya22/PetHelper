@@ -1,0 +1,74 @@
+﻿<h2>Услуги</h2>
+
+<table>
+
+    <tr>
+        <th>Наименование услуги</th>
+        <th>Стоимость</th>
+        <th>Краткое описание</th>
+        <th>
+
+        </th>
+        <th>
+
+        </th>
+    </tr>
+
+</table>
+
+<script src="../../Scripts/jquery-1.10.2.min.js"
+        type="text/javascript">
+</script>
+
+<script type="text/javascript">
+    function deleteService(e) {
+        var id = $(e).parent().siblings(":first").text();
+        var o = { id: id };
+
+        $.ajax({
+            type: "DELETE",
+            url: "http://localhost:45912/api/service?id=" + id,
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            data: o,
+            origin: "http:localhost:64344",
+            success: function (xml) {
+                alert("Услуга удалена");
+            },
+            error: function (xhr) {
+                alert("error");
+            }
+        });
+    }
+
+    $(document).ready(function () {
+        $.ajax({
+            type: "GET",
+            url: "http://localhost:45912/api/service",
+            dataType: "json",
+            origin: "http:localhost:64344",
+            success: function (json) {
+                var link = 'http://localhost:45912/Service/Put';
+                var linkDelete = 'http://localhost:64344/Service/Index';
+
+                $(json).find('Service').each(function () {
+                    var id = $(this).find('id').text();
+                    var ServiceName = $(this).find('_x003C_DocumentName_x003E_k__BackingField').text();
+                    var docDate = $(this).find('_x003C_DocumentDate_x003E_k__BackingField').text();
+                    $("<tr><td>" + id + "</td>" +
+                        "<td>" + docNumber + "</td>" +
+                        "<td>" + docDate + "</td>" +
+                        "<td>" + "<a href='" + link + id + "'>Редактировать<a/>" +
+                        "</td>" +
+                        "<td>" + "<a href='#' onclick='deleteDocument(this)'> Удалить</a></td></tr>").appendTo('#document_id');
+                });
+            },
+            error: function (xhr) {
+                alert("error");
+            }
+        });
+    });
+
+
+</script>
+

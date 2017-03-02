@@ -1,0 +1,42 @@
+﻿@model IEnumerable<ClassLibrary.Pet>
+
+<section class="wrapper style1">
+    <div class="container">
+        <div id="content">
+            <h2>Список карт</h2>
+
+            <p class="hidden" id="card-cr">
+                @Html.ActionLink("Создать", "Create")
+            </p>
+            <table class="default">
+                <tr>
+                    <th>
+                        Владелец
+                    </th>
+                    <th>
+                        Кличка
+                    </th>
+                    <th>
+                        Дата рождения
+                    </th>
+                    <th>
+                        Тип
+                    </th>
+                    <th>
+                        Порода
+                    </th>
+                    <th></th>
+                </tr>
+            </table>
+        </div>
+    </div>
+</section>
+
+<script src="/Scripts/Card.js"></script>
+<script>
+    $(document).ready(function () {
+        setTimeout(function() {
+            getCards();
+        }, 100);
+    });
+</script>

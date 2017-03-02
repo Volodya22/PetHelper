@@ -1,0 +1,35 @@
+﻿<Window x:Class="DesktopClient.AuthWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        WindowStartupLocation="CenterScreen"
+        Title="Вход" Height="300" Width="300" ResizeMode="NoResize">
+    <Grid>
+        <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            
+            <TextBlock Name="Error" Foreground="Red" Margin="0 -30 0 0" Visibility="Collapsed"
+                       Grid.ColumnSpan="2">Ошибка аутентификации!</TextBlock>
+        
+            <TextBlock Grid.Row="0" Grid.Column="0" Margin="0 0 15 15"
+                       VerticalAlignment="Center" HorizontalAlignment="Right">E-mail</TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="0" Margin="0 0 15 15"
+                       VerticalAlignment="Center" HorizontalAlignment="Right">Пароль</TextBlock>
+        
+            <TextBox Name="Login" Grid.Row="0" Grid.Column="1" Width="100" Margin="0 0 0 15"
+                     VerticalAlignment="Center" HorizontalAlignment="Left"></TextBox>
+            <PasswordBox Name="Password" Grid.Row="1" Grid.Column="1" Width="100" Margin="0 0 0 15"
+                         VerticalAlignment="Center" HorizontalAlignment="Left"></PasswordBox>
+            
+            <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" IsDefault="True"
+                    HorizontalAlignment="Center" Click="Login_OnClick">Войти</Button>
+        </Grid>
+    </Grid>
+</Window>

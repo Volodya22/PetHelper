@@ -1,0 +1,61 @@
+﻿@model ClassLibrary.ServiceForPet
+
+<section class="wrapper style1">
+    <div class="container">
+        <div id="content">
+            <h2>Удалить</h2>
+
+            <h3>Вы уверены, что хотите удалить данную бронь?</h3>
+            <div>
+                <dl class="dl-horizontal">
+                    <dt>
+                        Питомец
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.PetId)
+                    </dd>
+
+                    <dt>
+                        Услуга
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.ServiceId)
+                    </dd>
+
+                    <dt>
+                        Дата
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Date)
+                    </dd>
+
+                </dl>
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.HiddenFor(m => m.Id)
+                    <div class="form-actions no-color">
+                        <input type="submit" value="Удалить" class="btn btn-default" /> |
+                        @Html.ActionLink("Назад к списку", "Index")
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="/Scripts/Services.js"></script>
+<script src="/Scripts/Card.js"></script>
+<script>
+    getCards(1);
+    getServices(1);
+    getServiceForPet();
+
+    $('form').on('submit', function () {
+        deleteServiceForPet();
+    });
+</script>

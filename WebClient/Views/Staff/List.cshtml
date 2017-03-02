@@ -1,0 +1,37 @@
+﻿@model IEnumerable<ClassLibrary.User>
+
+<section class="wrapper style1">
+    <div class="container">
+        <div id="content">
+            <h2>Список ветеринаров</h2>
+
+            <p>
+                @Html.ActionLink("Создать", "Create")
+            </p>
+            <table class="default">
+                <tr>
+                    <th>
+                        Фамилия
+                    </th>
+                    <th>
+                        Имя
+                    </th>
+                    <th>
+                        Отчество
+                    </th>
+                    <th>
+                        Дата раждения
+                    </th>
+                    <th></th>
+                </tr>
+            </table>
+        </div>
+    </div>
+</section>
+
+<script src="/Scripts/Staff.js"></script>
+<script>
+    $(document).ready(function() {
+        getStaff(2, true);
+    });
+</script>

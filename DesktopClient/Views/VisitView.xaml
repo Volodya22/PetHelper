@@ -1,0 +1,64 @@
+﻿<Page x:Class="DesktopClient.Views.VisitView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+	Title="VisitView">
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Styles/FormStyle.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        
+        <TextBlock Text="Создание визита"
+                   Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                   Margin="0 0 0 15"
+                   FontWeight="Bold" FontSize="14"></TextBlock>
+        
+        <TextBlock Grid.Row="1" Grid.Column="0" Margin="0 0 15 15">Владелец</TextBlock>
+        <TextBlock Grid.Row="2" Grid.Column="0" Margin="0 0 15 15">Питомец</TextBlock>
+        <TextBlock Grid.Row="3" Grid.Column="0" Margin="0 0 15 15">Вакцина</TextBlock>
+        <TextBlock Grid.Row="4" Grid.Column="0" Margin="0 0 15 15">Дата</TextBlock>
+        
+        <ComboBox Grid.Row="1" Grid.Column="1" Margin="0 0 0 15"
+                  ItemsSource="{Binding Users}"
+                  SelectedItem="{Binding SelectedUser}"
+                  DisplayMemberPath="Surname" Width="200"
+                  SelectedValuePath="Id"></ComboBox>
+        <ComboBox Grid.Row="2" Grid.Column="1" Margin="0 0 0 15"
+                  ItemsSource="{Binding Pets}"
+                  SelectedItem="{Binding SelectedPet}"
+                  DisplayMemberPath="Name" Width="200"
+                  SelectedValuePath="Id"></ComboBox>
+        <ComboBox Grid.Row="3" Grid.Column="1" Margin="0 0 0 15"
+                  ItemsSource="{Binding Vaccinations}"
+                  SelectedItem="{Binding SelectedVaccination}"
+                  DisplayMemberPath="Name" Width="200"
+                  SelectedValuePath="Id"></ComboBox>
+        <xctk:DateTimePicker Grid.Row="4" Grid.Column="1" 
+                             Value="{Binding Date}" Width="200"
+                             Format="Custom" Margin="0 0 0 15"
+                             FormatString="dd.MM.yyyy"></xctk:DateTimePicker>
+        
+        <Button Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" 
+                IsDefault="True" Click="Create_OnClick">Создать</Button>
+    </Grid>
+</Page>

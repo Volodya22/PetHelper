@@ -1,0 +1,141 @@
+﻿@model ClassLibrary.User
+
+<section class="wrapper style1">
+    <div class="container">
+        <div id="content">
+            <h2>Создать</h2>
+            <div class="alert alert-danger hidden" role="alert" id="errors">
+                <p id="null-error">Поля "Электронная почта", "Пароль", "Фамилия" и "Имя" обязательны для заполнения!</p>
+                <p id="email-error">Длина поля "Электронная почта" не должна превышать 30 символов!</p>
+                <p id="pwd-error">Длина поля "Пароль" не должна быть менее 5 символов!</p>
+                <p id="sname-error">Длина поля "Фамилия" не должна превышать 25 символов!</p>
+                <p id="name-error">Длина поля "Имя" не должна превышать 25 символов!</p>
+                <p id="patr-error">Длина поля "Отчество" не должна превышать 25 символов!</p>
+                <p id="educ-error">Длина поля "Образование" не должна превышать 50 символов!</p>
+                <p id="spec-error">Длина поля "Специализация" не должна превышать 100 символов!</p>
+                <p id="trop-error">Длина поля "Награды" не должна превышать 150 символов!</p>
+            </div>
+            <form action="" method="POST" enctype="multipart/form-data">
+                @Html.AntiForgeryToken()
+                @Html.HiddenFor(m => m.Id)
+                <div class="form-horizontal">
+                    <hr />
+                    @Html.ValidationSummary(true)
+
+                    <div class="form-group">
+                        @Html.Label("Электронная почта", new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Email)
+                            @Html.ValidationMessageFor(model => model.Email)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.Label("Пароль", new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.PasswordFor(model => model.Password)
+                            @Html.ValidationMessageFor(model => model.Password)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.Label("Фамилия", new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Surname)
+                            @Html.ValidationMessageFor(model => model.Surname)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.Label("Имя", new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Name)
+                            @Html.ValidationMessageFor(model => model.Name)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.Label("Отчество", new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Patronymic)
+                            @Html.ValidationMessageFor(model => model.Patronymic)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.Label("Пол", new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.RadioButtonFor(model => model.Gender, true) М
+                            @Html.RadioButtonFor(model => model.Gender, false) Ж
+                            @Html.ValidationMessageFor(model => model.Gender)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.Label("Дата рождения", new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(model => model.BirthDate)
+                            @Html.ValidationMessageFor(model => model.BirthDate)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.Label("Специализация", new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Specialization)
+                            @Html.ValidationMessageFor(model => model.Specialization)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.Label("Образование", new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Education)
+                            @Html.ValidationMessageFor(model => model.Education)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.Label("Список наград и дипломов", new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Trophies)
+                            @Html.ValidationMessageFor(model => model.Trophies)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.Label("Фото", new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            <input type="file" name="ImageUrl" id="ImageUrl" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input id="bt-cr" type="button" value="Создать" class="btn btn-default" />
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <div>
+                @Html.ActionLink("Назад к списку", "List")
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="/Scripts/Staff.js"></script>
+<script>
+    $('#BirthDate').datepicker({
+        dateFormat: "yy-mm-dd"
+    });
+
+    $('#bt-cr').on('click', function (e) {
+        if (staffDataIsValid()) {
+            postEmp();
+        } else {
+            e.preventDefault();
+        }
+    });
+</script>
